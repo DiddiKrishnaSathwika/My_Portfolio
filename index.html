@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diddi Krishna Sathwika | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#020617;
+    color:white;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+    background:rgba(2,6,23,0.85);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:34px;
+}
+
+nav ul li a{
+    color:#cbd5e1;
+    transition:0.3s;
+    font-weight:600;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+#menuBtn{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:30px;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:120px 20px 60px;
+    background:
+    radial-gradient(circle at top right,#2563eb44,transparent 35%),
+    linear-gradient(to bottom,#020617,#0f172a);
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    width:100%;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:60px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:999px;
+    background:#0f172a;
+    border:1px solid #38bdf8;
+    color:#38bdf8;
+    margin-bottom:25px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.hero h1{
+    font-size:64px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#38bdf8;
+}
+
+.hero p{
+    color:#cbd5e1;
+    font-size:18px;
+    line-height:1.8;
+    max-width:650px;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 26px;
+    border-radius:999px;
+    background:#38bdf8;
+    color:#020617;
+    font-weight:800;
+    transition:0.3s;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(56,189,248,0.4);
+}
+
+.btn-outline{
+    background:transparent;
+    color:white;
+    border:1px solid #38bdf8;
+}
+
+.profile-card{
+    background:linear-gradient(145deg,#111827,#020617);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:30px;
+    padding:40px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,0.5);
+}
+
+.profile-card::before{
+    content:'';
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:#38bdf820;
+    border-radius:50%;
+    top:-120px;
+    right:-120px;
+}
+
+.avatar{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    overflow:hidden;
+    margin:auto;
+    border:4px solid #38bdf8;
+    box-shadow:0 10px 30px rgba(56,189,248,0.35);
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.profile-card h2{
+    margin-top:25px;
+    font-size:30px;
+}
+
+.profile-card p{
+    color:#94a3b8;
+    margin-top:8px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:30px;
+}
+
+.stat{
+    background:#0f172a;
+    padding:18px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.stat h3{
+    color:#38bdf8;
+    font-size:28px;
+}
+
+section{
+    padding:90px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:14px;
+}
+
+.section-sub{
+    text-align:center;
+    color:#94a3b8;
+    max-width:700px;
+    margin:0 auto 50px;
+}
+
+.about-box{
+    background:#111827;
+    padding:35px;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,0.08);
+    line-height:1.9;
+    color:#cbd5e1;
+    font-size:17px;
+}
+
+.skills-wrapper{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
+
+.skill{
+    padding:12px 20px;
+    border-radius:999px;
+    background:#111827;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+
+.skill:hover{
+    background:#38bdf8;
+    color:#020617;
+    transform:translateY(-5px);
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    background:linear-gradient(145deg,#111827,#0f172a);
+    border-radius:28px;
+    padding:30px;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    border-color:#38bdf8;
+    box-shadow:0 20px 40px rgba(56,189,248,0.15);
+}
+
+.project-card h3{
+    color:#38bdf8;
+    margin-bottom:14px;
+    font-size:24px;
+}
+
+.project-card p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+.experience-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+}
+
+.exp-card{
+    background:linear-gradient(145deg,#111827,#0f172a);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    padding:28px;
+    transition:0.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.exp-card:hover{
+    transform:translateY(-10px);
+    border-color:#38bdf8;
+    box-shadow:0 20px 40px rgba(56,189,248,0.15);
+}
+
+.exp-card::before{
+    content:'';
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:#38bdf810;
+    border-radius:50%;
+    top:-40px;
+    right:-40px;
+}
+
+.exp-icon{
+    width:60px;
+    height:60px;
+    border-radius:18px;
+    background:#38bdf8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.exp-card h3{
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.exp-card h4{
+    color:#38bdf8;
+    margin-bottom:8px;
+}
+
+.exp-card span{
+    color:#94a3b8;
+    font-size:14px;
+    display:block;
+    margin-bottom:14px;
+}
+
+.exp-card p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+.achievement-timeline{
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+}
+
+.achievement-box{
+    display:flex;
+    gap:28px;
+    background:linear-gradient(145deg,#111827,#0f172a);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:28px;
+    padding:30px;
+    transition:0.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.achievement-box::before{
+    content:'';
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:#38bdf810;
+    border-radius:50%;
+    right:-60px;
+    top:-60px;
+}
+
+.achievement-box:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+    box-shadow:0 20px 40px rgba(56,189,248,0.15);
+}
+
+.achievement-number{
+    min-width:80px;
+    height:80px;
+    border-radius:22px;
+    background:#38bdf8;
+    color:#020617;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    font-weight:800;
+}
+
+.achievement-content h3{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.achievement-content span{
+    display:inline-block;
+    margin-bottom:16px;
+    color:#38bdf8;
+    font-size:15px;
+    font-weight:600;
+}
+
+.achievement-content p{
+    color:#cbd5e1;
+    line-height:1.9;
+}
+
+.simple-contact{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+}
+
+.contact-item{
+    background:linear-gradient(145deg,#111827,#0f172a);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:35px;
+    border-radius:28px;
+    transition:0.35s;
+}
+
+.contact-item:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+    box-shadow:0 20px 40px rgba(56,189,248,0.15);
+}
+
+.contact-item h3{
+    font-size:24px;
+    margin-bottom:14px;
+}
+
+.contact-item a{
+    color:#38bdf8;
+    font-size:18px;
+}
+
+.bottom-contact{
+    margin-top:60px;
+    text-align:center;
+}
+
+.mail-btn{
+    display:inline-block;
+    padding:18px 38px;
+    border-radius:999px;
+    background:#38bdf8;
+    color:#020617;
+    font-weight:800;
+    font-size:20px;
+    transition:0.3s;
+    border:none;
+    cursor:pointer;
+}
+
+.mail-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(56,189,248,0.35);
+}
+
+.mail-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(2,6,23,0.85);
+    backdrop-filter:blur(8px);
+    z-index:3000;
+    justify-content:center;
+    align-items:center;
+}
+
+.mail-modal.show{
+    display:flex;
+}
+
+.mail-box{
+    width:90%;
+    max-width:420px;
+    background:#111827;
+    border-radius:28px;
+    padding:32px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 30px 80px rgba(0,0,0,0.5);
+}
+
+.mail-box h2{
+    margin-bottom:10px;
+}
+
+.mail-box p{
+    color:#94a3b8;
+    margin-bottom:24px;
+}
+
+.mail-box a,
+.mail-box button{
+    width:100%;
+    display:block;
+    margin-bottom:14px;
+    padding:15px;
+    border-radius:14px;
+    border:none;
+    background:#38bdf8;
+    color:#020617;
+    font-weight:800;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.mail-box button{
+    background:#020617;
+    color:white;
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+footer{
+    padding:30px;
+    text-align:center;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:850px){
+
+    nav{
+        justify-content:space-between;
+    }
+
+    nav ul{
+        display:none;
+        position:absolute;
+        top:75px;
+        right:20px;
+        flex-direction:column;
+        background:#020617;
+        padding:25px;
+        border-radius:18px;
+        border:1px solid rgba(255,255,255,0.08);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    #menuBtn{
+        display:block;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .achievement-box{
+        flex-direction:column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<ul id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#connect">Contact</a></li>
+</ul>
+
+<button id="menuBtn">☰</button>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+<div>
+<div class="badge">
+AI & ML Student • Full Stack Learner • Problem Solver
+</div>
+
+<h1>
+Hi, I'm <span>Diddi Krishna Sathwika</span>
+</h1>
+
+<p>
+Passionate Computer Science student specializing in AI & ML with experience
+in web development, machine learning, deep learning, and real-world software projects.
+Focused on building impactful and professional digital solutions.
+</p>
+
+<div class="buttons">
+<a href="#projects" class="btn">Explore Projects</a>
+
+<button class="btn btn-outline" onclick="openMailOptions()">
+Contact Me
+</button>
+</div>
+</div>
+
+<div class="profile-card">
+<div class="avatar">
+    <img src="profile.jpg" alt="Sathwika">
+</div>
+
+<h2>Diddi Krishna Sathwika</h2>
+
+<p>
+B.Tech CSE - AI & ML <br>
+SR University
+</p>
+
+<div class="stats">
+<div class="stat">
+<h3>9.41</h3>
+<p>CGPA</p>
+</div>
+
+<div class="stat">
+<h3>5+</h3>
+<p>Internships</p>
+</div>
+
+<div class="stat">
+<h3>4+</h3>
+<p>Projects</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<div class="container reveal">
+
+<h2 class="section-title">About Me</h2>
+
+<p class="section-sub">
+A motivated learner passionate about building innovative and impactful software solutions.
+</p>
+
+<div class="about-box">
+I am currently pursuing B.Tech in Computer Science and Engineering with specialization in AI & ML at SR University.
+I have worked on projects related to Machine Learning, Computer Vision, Deep Learning, and Web Development.
+My interests include building intelligent systems, creating modern web applications,
+and solving practical real-world problems through technology.
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+<div class="container reveal">
+
+<h2 class="section-title">Technical Skills</h2>
+
+<p class="section-sub">
+Technologies and tools I use to develop intelligent and modern applications.
+</p>
+
+<div class="skills-wrapper">
+<span class="skill">Python</span>
+<span class="skill">C</span>
+<span class="skill">Java</span>
+<span class="skill">HTML</span>
+<span class="skill">CSS</span>
+<span class="skill">JavaScript</span>
+<span class="skill">Flask</span>
+<span class="skill">Machine Learning</span>
+<span class="skill">Deep Learning</span>
+<span class="skill">TensorFlow</span>
+<span class="skill">Keras</span>
+<span class="skill">OpenCV</span>
+<span class="skill">Scikit-learn</span>
+<span class="skill">MySQL</span>
+<span class="skill">Git</span>
+<span class="skill">GitHub</span>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<div class="container reveal">
+
+<h2 class="section-title">Featured Projects</h2>
+
+<p class="section-sub">
+Projects showcasing my practical skills in AI, ML, and software development.
+</p>
+
+<div class="projects-grid">
+
+<div class="project-card">
+<h3>Plant Disease Detection</h3>
+<p>
+Developed an AI-powered system using MobileNet to identify plant diseases
+from leaf images for agricultural assistance.
+</p>
+</div>
+
+<div class="project-card">
+<h3>Crop Yield Prediction</h3>
+<p>
+Built a machine learning system using Random Forest Regression to predict crop yields
+with district-wise agricultural data and Streamlit interface.
+</p>
+</div>
+
+<div class="project-card">
+<h3>Lung Cancer Detection</h3>
+<p>
+Developed a CNN-based web application to classify lung cancer types from CT scan images.
+</p>
+</div>
+
+<div class="project-card">
+<h3>Furnace Temperature Control</h3>
+<p>
+Reinforcement Learning based intelligent furnace temperature control system
+for industrial optimization and energy efficiency.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="experience">
+<div class="container reveal">
+
+<h2 class="section-title">Experience</h2>
+
+<p class="section-sub">
+Professional internships and industry exposure across multiple technical domains.
+</p>
+
+<div class="experience-grid">
+
+<div class="exp-card">
+<div class="exp-icon">💻</div>
+<h3>Web Development</h3>
+<h4>Intrainz</h4>
+<span>March - May 2024</span>
+<p>Worked on responsive web applications and frontend development projects.</p>
+</div>
+
+<div class="exp-card">
+<div class="exp-icon">🤖</div>
+<h3>Machine Learning</h3>
+<h4>Prodigy Infotech</h4>
+<span>June 2024</span>
+<p>Built predictive machine learning models and worked on analytical tasks.</p>
+</div>
+
+<div class="exp-card">
+<div class="exp-icon">📊</div>
+<h3>Data Science</h3>
+<h4>Oasis Infobyte</h4>
+<span>June - July 2024</span>
+<p>Worked on spam detection and sales prediction using data science techniques.</p>
+</div>
+
+<div class="exp-card">
+<div class="exp-icon">🧠</div>
+<h3>AIML Internship</h3>
+<h4>Eduskills</h4>
+<span>2024</span>
+<p>Gained practical exposure to AI and Machine Learning workflows.</p>
+</div>
+
+<div class="exp-card">
+<div class="exp-icon">⚡</div>
+<h3>Java Full Stack</h3>
+<h4>Eduskills</h4>
+<span>10 Weeks</span>
+<p>Learned frontend, backend, and database integration concepts.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="achievements">
+<div class="container reveal">
+
+<h2 class="section-title">Achievements</h2>
+
+<p class="section-sub">
+Milestones and accomplishments that reflect technical excellence, consistency, and innovation.
+</p>
+
+<div class="achievement-timeline">
+
+<div class="achievement-box">
+<div class="achievement-number">01</div>
+<div class="achievement-content">
+<h3>BuildWithIndia – Vibe Hack 2.0</h3>
+<span>National Level Hackathon</span>
+<p>
+Selected among the top 5,000 teams out of 25,000 participants and advanced to the final stages of the competition.
+</p>
+</div>
+</div>
+
+<div class="achievement-box">
+<div class="achievement-number">02</div>
+<div class="achievement-content">
+<h3>Google Office Finals Qualification</h3>
+<span>Hackathon Achievement</span>
+<p>
+Qualified for the final round conducted at Google Office through performance in BuildWithIndia challenge rounds.
+</p>
+</div>
+</div>
+
+<div class="achievement-box">
+<div class="achievement-number">03</div>
+<div class="achievement-content">
+<h3>Department Topper</h3>
+<span>Academic Excellence</span>
+<p>
+Secured Department Topper position in both 2-1 and 3-1 semesters at SR University with strong academic consistency.
+</p>
+</div>
+</div>
+
+<div class="achievement-box">
+<div class="achievement-number">04</div>
+<div class="achievement-content">
+<h3>UDBHAVA X’26 Hackathon Runner-Up</h3>
+<span>Agri Tech Domain</span>
+<p>
+Achieved Runner-up position in a 12-hour multi-domain hackathon for developing an impactful AgriTech solution.
+</p>
+</div>
+</div>
+
+<div class="achievement-box">
+<div class="achievement-number">05</div>
+<div class="achievement-content">
+<h3>Star Performer Recognition</h3>
+<span>Oasis Infobyte</span>
+<p>
+Recognized as Star Performer during Data Science Internship based on project quality and technical contribution.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="connect">
+<div class="container reveal">
+
+<h2 class="section-title">Connect With Me</h2>
+
+<p class="section-sub">
+You can explore my work and professional profile through the links below.
+</p>
+
+<div class="simple-contact">
+
+<div class="contact-item">
+<h3>💻 GitHub</h3>
+<a href="https://github.com/DiddiKrishnaSathwika" target="_blank">
+github.com/DiddiKrishnaSathwika
+</a>
+</div>
+
+<div class="contact-item">
+<h3>🔗 LinkedIn</h3>
+<a href="https://www.linkedin.com/in/diddi-krishna-sathwika-25a334311/" target="_blank">
+LinkedIn Profile
+</a>
+</div>
+
+</div>
+
+<div class="bottom-contact">
+<button class="mail-btn" onclick="openMailOptions()">
+Contact Me
+</button>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Diddi Krishna Sathwika | Portfolio Website
+</footer>
+
+<div id="mailModal" class="mail-modal">
+<div class="mail-box">
+
+<h2>Choose Mail Option</h2>
+<p>Select how you want to contact me</p>
+
+<a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=krishnasathwikad@gmail.com">
+Open Gmail
+</a>
+
+<a target="_blank" href="https://outlook.live.com/mail/0/deeplink/compose?to=krishnasathwikad@gmail.com">
+Open Outlook
+</a>
+
+<a target="_blank" href="https://mail.yahoo.com/d/compose?to=krishnasathwikad@gmail.com">
+Open Yahoo Mail
+</a>
+
+<a target="_blank" href="https://mail.zoho.com/zm/#compose?to=krishnasathwikad@gmail.com">
+Open Zoho Mail
+</a>
+
+<a href="mailto:krishnasathwikad@gmail.com">
+Default Mail App
+</a>
+
+<button onclick="closeMailOptions()">
+Cancel
+</button>
+
+</div>
+</div>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+    });
+});
+
+function openMailOptions(){
+    document.getElementById("mailModal").classList.add("show");
+}
+
+function closeMailOptions(){
+    document.getElementById("mailModal").classList.remove("show");
+}
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealSections(){
+    reveals.forEach(section => {
+        const windowHeight = window.innerHeight;
+        const revealTop = section.getBoundingClientRect().top;
+
+        if(revealTop < windowHeight - 100){
+            section.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealSections);
+revealSections();
+</script>
+
+</body>
+</html>
